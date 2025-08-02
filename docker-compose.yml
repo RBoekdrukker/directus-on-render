@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: directus_global
+      MYSQL_USER: CMSAdmin
+      MYSQL_PASSWORD: &Fem1FRdyQXL8Dmy
+      MYSQL_ROOT_PASSWORD: &Fem1FRdyQXL8Dmy
+    ports:
+      - 3306:3306
+
+  directus:
+    image: directus/directus:latest
+    ports:
+      - 8055:8055
+    depends_on:
+      - mysql
+    environment:
+      KEY: my-secret-key
+      ADMIN_EMAIL: roderick@boekdrukker.com
+      ADMIN_PASSWORD: 51VZrUdrrMje5E*u
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: directus_global
+      DATABASE_USER: CMSAdmin
+      DATABASE_PASSWORD: &Fem1FRdyQXL8Dmy
