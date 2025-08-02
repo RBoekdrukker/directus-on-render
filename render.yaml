@@ -3,5 +3,5 @@ services:
     name: directus
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerComposeFilePath: docker-compose.yml
     autoDeploy: true
