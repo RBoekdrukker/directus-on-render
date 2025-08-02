@@ -1,7 +1,2 @@
-services:
-- type: web
-  name: directus
-  env: docker
-  plan: free
+infrastructure:
   dockerComposeFilePath: docker-compose.yml
-  autoDeploy: true
