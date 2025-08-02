@@ -11,6 +11,13 @@ services:
     ports:
       - 3306:3306
 
+  - type: web
+    name: directus
+    env: docker
+    plan: free
+    dockerComposeFilePath: docker-compose.yml
+    autoDeploy: true
+    
   directus:
     image: directus/directus:latest
     ports:
@@ -27,3 +34,6 @@ services:
       DATABASE_NAME: directus_global
       DATABASE_USER: CMSAdmin
       DATABASE_PASSWORD: &Fem1FRdyQXL8Dmy
+
+
+
